@@ -8,9 +8,9 @@ Summary: Compiling Mutt on OSX
 
 I first half-read some pages:
 
-<http://linsec.ca/Using_mutt_on_OS_X>
-<http://thomer.com/howtos/mutt_on_mac.html>
-<http://web.archive.org/web/20100603225320/http://linsec.ca/Using_mutt_on_OS_X>
+* <http://linsec.ca/Using_mutt_on_OS_X>
+* <http://thomer.com/howtos/mutt_on_mac.html>
+* <http://web.archive.org/web/20091022110954/http://jwherring.com/TOWM/2009/01/25/mutt-on-mac-os-x/>
 
 ## My setup
 
