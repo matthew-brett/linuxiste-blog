@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+from os.path import expanduser
 
 AUTHOR = u'Matthew Brett'
 SITENAME = u'Linuxiste'
@@ -30,3 +31,5 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+THEME=expanduser('~/dev_trees/pelican-themes/tuxlite_tbs')
