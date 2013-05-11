@@ -8,18 +8,23 @@ Summary: My monitor went blank with OSX, I rewrote the EDID and it's OK now.
 
 I have dual monitors attached via DVI to my elderly Mac Pro 1,1 destop.
 
-Very luckily for me (you'll see why later), both are ViewSonic VP2130b monitors
-that I found lying around somewhere.
+Both monitors are ViewSonic VP2130b monitors that I found lying around
+somewhere. It turned out to be very lucky for me that the monitors were the
+same make and model, as you'll see later.
 
 The right monitor of the two is also attached (via a KVM) to an old laptop I
 use for hosting our [buildbots](http://nipy.bic.berkeley.edu/builders).  The
 laptop runs Ubuntu 12.04.
 
 They were working fine up until a few days ago when I noticed that the screen
-went blank when I tried to switch the the laptop.  I thought nothing much of
-it, and connected the laptop to another screen.
+went blank when I tried to switch the KVM to the laptop.  I thought nothing
+much of it, and connected the laptop to another screen.
 
-I noticed two things.  First, I saw messages like this on the screen:
+Now the laptop had its own screen and the ViewSonic was attached directly to
+the Mac.
+
+I noticed two new signs.  First, I saw messages like this on the screen I had
+just plugged into the laptop:
 
     May 10 16:01:39 maqroll kernel: [ 9762.942248] [drm:drm_edid_block_valid] *ERROR* EDID checksum is invalid, remainder is 7
 
@@ -30,7 +35,7 @@ laptop via the KVM was behaving strangely.
 
 * It was always blank when attached to OSX
 * OSX now seemed to believe it was a VGA monitor
-* No display settings gave any signal
+* No display settings gave any signal in OSX
 * The monitor worked fine when attached to the Ubuntu laptop
 
 I tried all sorts of things, such as doing a factory reset to the monitor. I had to repeat [these
@@ -54,6 +59,9 @@ I read some pages, very superficially:
 
 I played with [read-edid](http://www.polypux.org/projects/read-edid/), but this
 didn't seem to detect a difference in the EDID of my good and my bad monitor.
+This later turned out to be because they were only reading the EDID of the LCD
+screen of the laptop and there is no way to ask the current tools in
+`read-edid` to get the EDID of the attached monitor.
 
 Finally, I stumbled on [edid-rw](https://github.com/bulletmark/edid-rw).
 
