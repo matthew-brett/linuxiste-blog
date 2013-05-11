@@ -4,11 +4,12 @@ Tags: OSX, EDID, edid-rw, viewsonic, VP2130b
 Category: monitor, debugging, fix
 Slug: alive-again-edid
 Author: Matthew Brett
-Summary: Back from the dead with `edid-rw`
+Summary: My monitor went blank with OSX, I rewrote the EDID and it's OK now.
 
 I have dual monitors attached via DVI to my elderly Mac Pro 1,1 destop.
 
-They are both ViewSonic VP2130b monitors that I found lying around somewhere.
+Very luckily for me (you'll see why later), both are ViewSonic VP2130b monitors
+that I found lying around somewhere.
 
 The right monitor of the two is also attached (via a KVM) to an old laptop I
 use for hosting our [buildbots](http://nipy.bic.berkeley.edu/builders).  The
@@ -32,20 +33,9 @@ laptop via the KVM was behaving strangely.
 * No display settings gave any signal
 * The monitor worked fine when attached to the Ubuntu laptop
 
-I tried all sorts of things, such as [factory
-resetting](http://www.flickr.com/photos/14723666@N03/5554138009/in/set-72157626336780968)
-the monitor:
-
-* The monitor needs to be plugged into a machine giving a display for this to
-  work
-* Turn off monitor with power switch on front
-* Hold down power and `2` key (next to the power key)
-* Wait for the monitor to come on
-* Keep doing this a few times until it works (sorry, I don't know why)
-* It should have an OSD with 'Factory' at the bottom
-* Use the down key to scroll to the 'Factory' text, and press `2` key to enter
-  the factor resets OSD menu.  Select "FACTORY RESET" and press `2` again to
-  select
+I tried all sorts of things, such as doing a factory reset to the monitor. I had to repeat [these
+instructions](http://www.flickr.com/photos/14723666@N03/5554138009/in/set-72157626336780968)
+a few times before the "FACTORY" OSD came up.  It had no effect, I just mention it for completeness.
 
 It was only at this stage that I began to consider that I had a problem with
 the monitor's [EDID](http://en.wikipedia.org/wiki/EDID).  I know that's dumb,
@@ -67,7 +57,7 @@ didn't seem to detect a difference in the EDID of my good and my bad monitor.
 
 Finally, I stumbled on [edid-rw](https://github.com/bulletmark/edid-rw).
 
-Now I am working on a friend's Dell laptop running Ubuntu 12.10 [thanks
+I was now working on a friend's Dell laptop running Ubuntu 12.10 - [thanks
 Fernando](http://fperez.org).  I have either the good or bad ViewSonic monitor
 plugged into the HDMI out.
 
@@ -100,5 +90,9 @@ I read out the EDID again to check it was the same as ``good-edid.bin``; it
 was.
 
 Hey presto, plugging into OSX - the monitor is good as new.
+
+Here are the contents of [good-edid.bin](|filename|/downloads/good-edid.bin).
+Obviously you would not want to write this to your own monitor as it will
+likely do **terrible damage** - but just for reference.
 
 <!--- vim:ft=markdown -->
