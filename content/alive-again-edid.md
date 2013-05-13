@@ -1,5 +1,5 @@
 Title: Fixing half-dead monitor with EDID writes
-Date: 2013-04-29 17:30
+Date: 2013-05-10 17:30
 Tags: OSX, EDID, edid-rw, viewsonic, VP2130b
 Category: monitor, debugging, fix
 Slug: alive-again-edid
